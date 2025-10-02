@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>أحاديث صحيحة - موقع خير/ Khair</title>
+    <meta name="description" content="أحاديث صحيحة موثوقة">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="I.png" type="png">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Scheherazade+New&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "KFGQPC-Uthman";
+            src: url("/fonts/KFGQPC_Uthman_Taha_Naskh.woff2") format("woff2"),
+                 url("/fonts/KFGQPC_Uthman_Taha_Naskh.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF;
+        }
+    </style>
+    <meta name="robots" content="noindex">
+    <!-- This hadith page uses a curated local dataset of authentic narrations. -->
+    <script>document.documentElement.style.setProperty('--reader-scale', localStorage.getItem('fontScale')||1);</script>
+    <style>
+        .hadith-item { padding: 12px 0; border-bottom: 1px dashed rgba(255,255,255,0.08); }
+        .hadith-meta { opacity: 0.8; font-size: 0.85em; margin-top: 6px; }
+        body.light .hadith-item { border-bottom-color: rgba(0,0,0,0.08); }
+    </style>
+    </head>
+<body>
+    <div class="app" dir="rtl">
+        <div class="backdrop" id="backdrop" hidden></div>
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1 class="brand">أحاديث صحيحة</h1>
+                <div class="controls-inline only-mobile">
+                    <a class="control" href="index.html" aria-label="العودة للقرآن">القرآن</a>
+                </div>
+            </div>
+            <div class="search">
+                <input type="search" id="searchInput" placeholder="ابحث في الأحاديث..." aria-label="ابحث في الأحاديث">
+            </div>
+            <nav class="surah-list" id="hadithList" aria-label="قائمة الأحاديث">
+                <!-- filled by JS -->
+            </nav>
+        </aside>
+        <main class="reader" id="reader" tabindex="0">
+            <header class="reader-header">
+                <div class="reader-title">
+                    <h2 id="hadithTitle">أحاديث صحيحة</h2>
+                    <div class="meta" id="hadithMeta"></div>
+                </div>
+                <div class="controls">
+                    <button class="control only-mobile" id="openSidebar" aria-label="فتح قائمة الأحاديث">اختيار الحديث</button>
+                    <a class="control" href="index.html" aria-label="العودة للقرآن">القرآن الكريم</a>
+                    <button class="control" id="decreaseFont2" title="تصغير الخط">أ-</button>
+                    <button class="control" id="increaseFont2" title="تكبير الخط">أ+</button>
+                    <button class="control" id="toggleTheme2" title="تبديل السمة">☾</button>
+                </div>
+            </header>
+            <section class="ayahs" id="content">
+                <div class="placeholder">اختر حديثًا من القائمة لعرض التفاصيل.</div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer" dir="rtl">
+        <p class="duaa">اللهم ارزقنا العلم النافع والعمل الصالح.</p>
+        <p class="credits">فارس</p>
+    </footer>
+
+    <script src="hadith.js"></script>
+</body>
+</html>
+
+

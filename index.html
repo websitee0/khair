@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>موقع خير/ Khair - قرآن كريم</title>
+    <meta name="description" content="سورة الكهف">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="I.png" type="png">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Scheherazade+New&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: "KFGQPC-Uthman";
+            src: url("/fonts/KFGQPC_Uthman_Taha_Naskh.woff2") format("woff2"),
+                url("/fonts/KFGQPC_Uthman_Taha_Naskh.woff") format("woff");
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+            unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="app" dir="rtl">
+        <div class="backdrop" id="backdrop" hidden></div>
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1 class="brand">القرآن الكريم</h1>
+            </div>
+            <div class="search">
+                <input type="search" id="searchInput" placeholder="ابحث عن سورة..." aria-label="ابحث عن سورة">
+            </div>
+            <nav class="surah-list" id="surahList" aria-label="قائمة السور">
+                <!-- filled by JS -->
+            </nav>
+        </aside>
+        <main class="reader" id="reader" tabindex="0">
+            <header class="reader-header">
+                <div class="reader-title">
+                    <h2 id="surahTitle">موقع خير/ Khair</h2>
+                    <div class="meta" id="surahMeta"></div>
+                </div>
+                <div class="controls">
+                    <a class="control" href="hadith.html" aria-label="انتقال إلى الأحاديث الصحيحة">أحاديث صحيحة</a>
+                    <button class="control" id="openSidebar" aria-label="فتح قائمة السور">اختيار السورة</button>
+                    <button class="control" id="decreaseFont2" title="تصغير الخط">أ-</button>
+                    <button class="control" id="increaseFont2" title="تكبير الخط">أ+</button>
+                    <button class="control" id="toggleTheme2" title="تبديل السمة">☾</button>
+                </div>
+            </header>
+            <div class="audio-controls" id="audioControls">
+                <div class="reciter-select">
+                    <label for="reciter" class="visually-hidden">القارئ</label>
+                    <select id="reciter" class="select">
+                        <option value="ar.alafasy">مشاري العفاسي</option>
+                        <option value="ar.husary">محمود خليل الحصري</option>
+                        <option value="ar.hudhaify">علي الحذيفي</option>
+                        <option value="ar.minshawi">محمد صديق المنشاوي</option>
+                        <option value="ar.shaatree">أبو بكر الشاطري</option>
+                        <option value="ar.mahermuaiqly">ماهر المعيقلي</option>
+                    </select>
+                </div>
+                <div class="playback-buttons">
+                    <button class="control" id="prevAyah" title="الآية السابقة" aria-label="الآية السابقة">السابق</button>
+                    <button class="control primary" id="playPause" title="تشغيل/إيقاف" aria-label="تشغيل أو إيقاف">تشغيل</button>
+                    <button class="control" id="nextAyah" title="الآية التالية" aria-label="الآية التالية">التالي</button>
+                    <label class="toggle">
+                        <input type="checkbox" id="autoScroll" checked>
+                        <span>تمرير تلقائي</span>
+                    </label>
+                </div>
+            </div>
+            <div class="progress" id="progress" style="height: 3px; background: rgba(255,255,255,0.15); border-radius: 2px; overflow: hidden;">
+                <div id="progressBar" style="height: 100%; width: 0%; background: rgba(255,255,255,0.35);"></div>
+            </div>
+            <section class="ayahs" id="ayahs">
+                <div class="placeholder">
+                    اختر سورة من القائمة لعرض الآيات.
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="footer" dir="rtl">
+        <p class="duaa">دعوة جميلة منك عسى ان تقبل من الله عز وجل.</p>
+        <p class="credits">فارس</p>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
